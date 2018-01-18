@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<title>Home</title>
+</head>
+<body>
+	<script th:src="@{/webjars/sockjs-client/sockjs.min.js}"></script>
+	<script th:src="@{/webjars/stomp-websocket/stomp.min.js}"></script>
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+
+
+	<form id="fdForm">
+		name: <input id="name" type="text" name="name" />
+		<input id="test" type="submit" value="test" />
+	</form>
+	<div id="output"></div>
+	<script th:inline="javascript">
+		var socket,stomp;
+		
+		$(document).ready(function(){
+			socket = new SockJS([[@{/fleetdashboard}]]);
+			stomp = Stomp.over(socket);
+		});
+	
+	
+		function startConnet(sUser) {
+			var sock = new SockJS([[@{/fleetdashboard}]]);
+				var stomp = Stomp.over(sock);
+				stomp.connect({
+		            name: sUser // 携带客户端信息
+		        }, function(frame) {
+					console.log("connected");
+					$('#test').attr('disabled',"true");
+					$('#name').attr("disabled","disabled");
+					 $('#output').append("<b>Connect Successfully for Testing for User: "+sUser +"</b><br/>");
+					stomp.subscribe("/topic/tourFeed", handleMessage);
+					stomp.subscribe("/user/queue/notifications", handleNotification);
+					stomp.subscribe("/topic/pushAlertMsg", handAlertMessage);
+				});
+		}
+	   
+	    function handleMessage(message) {
+	  	  console.log('Tour:', message);
+	  	  $('#output').append("<b>Received Tour Changed Message: " + JSON.parse(message.body) + "</b><br/>");
+	    }
+	    
+	    function handleNotification(message) {
+	      console.log('Notification: ', message);
+	      var msgObj = JSON.parse(message.body);
+	      $('#output').append("<b>Received message from user: " + msgObj.fromUser +" with content: " +
+	      		msgObj.message + "</b><br/>")
+	    }
+	    
+	    function handAlertMessage(message) {
+	       console.log('AlertMessage:', message);
+		   $('#output').append("<b>Received Alert Message: " + JSON.parse(message.body).message + "</b><br/>");
+	    }
+	
+		$('#fdForm').submit(function(e){
+			e.preventDefault();
+			var userName = $('#fdForm').find('input[name="name"]').val();
+			if(!userName) {
+				alert("please input the user name");
+				return;
+			}
+			
+			startConnet(userName);
+			
+		});
+			
+      </script>
+</body>
+</html>
