@@ -1,4 +1,4 @@
-package com.sap.fd.message.model;
+package com.xin.message.model;
 
 public class AlertNotification {
 	private String tourId;

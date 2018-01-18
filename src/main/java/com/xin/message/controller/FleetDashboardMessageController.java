@@ -1,4 +1,4 @@
-package com.sap.fd.message.controller;
+package com.xin.message.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,11 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sap.fd.message.common.ServerResponse;
-import com.sap.fd.message.model.AlertNotification;
-import com.sap.fd.message.model.Notification;
-import com.sap.fd.message.model.Tour;
-import com.sap.fd.message.service.FleetDashboardMessageService;
+import com.xin.message.common.ServerResponse;
+import com.xin.message.model.AlertNotification;
+import com.xin.message.model.Notification;
+import com.xin.message.model.Tour;
+import com.xin.message.service.FleetDashboardMessageService;
 
 @Controller("/message")
 public class FleetDashboardMessageController {

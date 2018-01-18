@@ -1,4 +1,4 @@
-package com.sap.fd.message;
+package com.xin.message;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

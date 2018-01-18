@@ -1,4 +1,4 @@
-package com.sap.fd.message.config;
+package com.xin.message.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,7 @@ import org.springframework.web.socket.config.annotation.WebSocketTransportRegist
 import org.springframework.web.socket.handler.WebSocketHandlerDecorator;
 import org.springframework.web.socket.handler.WebSocketHandlerDecoratorFactory;
 
-import com.sap.fd.message.Interceptor.UserInterceptor;
+import com.xin.message.Interceptor.UserInterceptor;
 
 @Configuration
 @EnableWebSocketMessageBroker

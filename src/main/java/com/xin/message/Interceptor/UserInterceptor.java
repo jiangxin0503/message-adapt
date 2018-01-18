@@ -1,4 +1,4 @@
-package com.sap.fd.message.Interceptor;
+package com.xin.message.Interceptor;
 
 import java.util.LinkedList;
 import java.util.Map;
@@ -11,7 +11,7 @@ import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.messaging.support.ChannelInterceptorAdapter;
 import org.springframework.messaging.support.MessageHeaderAccessor;
 
-import com.sap.fd.message.model.User;
+import com.xin.message.model.User;
 
 public class UserInterceptor extends ChannelInterceptorAdapter {
     

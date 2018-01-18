@@ -1,4 +1,4 @@
-package com.sap.fd.message.config;
+package com.xin.message.config;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;

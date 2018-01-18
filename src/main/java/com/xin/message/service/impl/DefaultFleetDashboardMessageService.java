@@ -1,13 +1,13 @@
- package com.sap.fd.message.service.impl;
+ package com.xin.message.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
-import com.sap.fd.message.model.AlertNotification;
-import com.sap.fd.message.model.Notification;
-import com.sap.fd.message.model.Tour;
-import com.sap.fd.message.service.FleetDashboardMessageService;
+import com.xin.message.model.AlertNotification;
+import com.xin.message.model.Notification;
+import com.xin.message.model.Tour;
+import com.xin.message.service.FleetDashboardMessageService;
 
 @Service
 public class DefaultFleetDashboardMessageService implements FleetDashboardMessageService{

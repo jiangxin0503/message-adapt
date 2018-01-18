@@ -1,4 +1,4 @@
-package com.sap.fd.message.model;
+package com.xin.message.model;
 
 import java.security.Principal;
 

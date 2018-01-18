@@ -1,4 +1,4 @@
-package com.sap.fd.message.common;
+package com.xin.message.common;
 
 public enum ResponseCode {
 	

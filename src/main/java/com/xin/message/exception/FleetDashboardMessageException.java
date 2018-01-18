@@ -1,4 +1,4 @@
-package com.sap.fd.message.exception;
+package com.xin.message.exception;
 
 public class FleetDashboardMessageException {
 

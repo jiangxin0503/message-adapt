@@ -1,8 +1,8 @@
-package com.sap.fd.message.service;
+package com.xin.message.service;
 
-import com.sap.fd.message.model.AlertNotification;
-import com.sap.fd.message.model.Notification;
-import com.sap.fd.message.model.Tour;
+import com.xin.message.model.AlertNotification;
+import com.xin.message.model.Notification;
+import com.xin.message.model.Tour;
 
 public interface FleetDashboardMessageService {
 	
