@@ -1,4 +1,4 @@
-package com.sap.fd.message;
+package com.xin.message;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
